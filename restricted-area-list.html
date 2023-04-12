@@ -1,0 +1,1345 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+  <head>
+    <title>Geo Fenced Restricted Area</title>
+    <!--== META TAGS ==-->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui"
+    />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <!-- Favicon icon -->
+    <link
+      rel="icon"
+      href="https://fox-taxiapp.startuptrinity.com/assets/images/website-logo-icon/894207112022290913.png"
+      type="image/x-icon"
+    />
+    <!-- Google font-->
+    <link
+      href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Quicksand:500,700"
+      rel="stylesheet"
+    />
+    <!-- Required Fremwork -->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://fox-taxiapp.startuptrinity.com/assets/css/bootstrap.min.css"
+    />
+    <!-- waves.css -->
+    <link
+      rel="stylesheet"
+      href="https://fox-taxiapp.startuptrinity.com/assets/css/waves.min.css"
+      type="text/css"
+      media="all"
+    />
+    <!-- feather icon -->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://fox-taxiapp.startuptrinity.com/assets/css/feather.css"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://fox-taxiapp.startuptrinity.com/assets/css/font/font-awesome.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fox-taxiapp.startuptrinity.com/assets/css/sweetalert.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.6.3/css/all.css"
+      integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/"
+      crossorigin="anonymous"
+    />
+    <!-- Style.css -->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://fox-taxiapp.startuptrinity.com/assets/css/style.css?v=0.1"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://fox-taxiapp.startuptrinity.com/assets/css/pages.css"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://fox-taxiapp.startuptrinity.com/assets/css/extra.style.css"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://fox-taxiapp.startuptrinity.com/assets/css/extra.style2.css"
+    />
+    <style>
+      :root {
+        --theme_color: #28c271;
+        --theme_second_color: #28c271;
+        --hover-brightness: 0.8;
+      }
+    </style>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://fox-taxiapp.startuptrinity.com/assets/css/responsive/dataTables.bootstrap4.min.css"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://fox-taxiapp.startuptrinity.com/assets/css/responsive/responsive.bootstrap4.min.css"
+    />
+    <style>
+      .currency:before {
+        content: "$";
+      }
+    </style>
+
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/8.7.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.7.1/firebase-messaging.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.7.1/firebase-database.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.7.1/firebase-auth.js"></script>
+
+    <script>
+      // Your web app's Firebase configuration
+      // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+      //var firebaseConfig = {
+      //    apiKey: "AIzaSyDtaF2Z-5WQa-_TaYRxlb_b0F4_JLFzhyk",
+      //    authDomain: "fox-jek-2022.firebaseapp.com",
+      //    databaseURL: "https://fox-jek-2022-default-rtdb.firebaseio.com",
+      //    projectId: "fox-jek-2022",
+      //    storageBucket: "fox-jek-2022.appspot.com",
+      //    messagingSenderId: "163452129518",
+      //    appId: "1:163452129518:web:c71e3b2f7c47a435e0e3ff",
+      //    measurementId: "G-TFMZ8ZWKDR"
+      //};
+      // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+      var firebaseConfig = {
+        apiKey: "AIzaSyBstOmUQKOGyFtMbDDBacVCKZI3mh4hIP8",
+        authDomain: "white-label-fox-driver.firebaseapp.com",
+        databaseURL: "https://white-label-fox-driver.firebaseio.com",
+        projectId: "white-label-fox-driver",
+        storageBucket: "white-label-fox-driver.appspot.com",
+        messagingSenderId: "134711660114",
+        appId: "1:134711660114:web:ebb0ee8f7267451b98998b",
+        measurementId: "G-M2B3DZLN2J",
+      };
+      // Initialize Firebase
+      firebase.initializeApp(firebaseConfig);
+    </script>
+  </head>
+
+  <body>
+    <div
+      id="google_translate_element"
+      style="position: absolute; right: 350px; top: 12px; z-index: 1000000"
+    ></div>
+    <div id="render-css-link"></div>
+    <div id="render-css"></div>
+    <!-- [ Pre-loader ] start -->
+    <div class="loader-bg">
+      <div class="loader-bar"></div>
+    </div>
+
+    <div class="pre-loader"></div>
+    <!-- [ Pre-loader ] end -->
+    <div id="pcoded" class="pcoded">
+      <div class="pcoded-overlay-box"></div>
+      <div class="pcoded-container navbar-wrapper">
+        <!-- [ Header ] start -->
+        <nav class="navbar header-navbar pcoded-header">
+          <div class="navbar-wrapper">
+            <div class="navbar-logo">
+              <a
+                class="render_link"
+                href="https://fox-taxiapp.startuptrinity.com/admin/dashboard"
+              >
+                <img
+                  class="img-fluid"
+                  src="./assets/images/Logo.png"
+                  alt="55334112022290921.png"
+                  style="width: 100px"
+                />
+              </a>
+              <a class="mobile-menu" id="mobile-collapse">
+                <i
+                  class="feather icon-menu icon-toggle-right"
+                  style="cursor: pointer"
+                ></i>
+              </a>
+              <a class="mobile-options waves-effect waves-light">
+                <i class="feather icon-more-horizontal"></i>
+              </a>
+            </div>
+
+            <div class="navbar-container container-fluid">
+              <ul class="nav-left"></ul>
+              <ul class="nav-right">
+                <li class="user-profile header-notification">
+                  <div class="dropdown-primary dropdown">
+                    <div class="dropdown-toggle" data-toggle="dropdown">
+                      <img
+                        src="https://fox-taxiapp.startuptrinity.com/assets/images/website-logo-icon/user.png"
+                        class="img-radius"
+                        alt="User-Profile-Image"
+                      />
+                      <span>Demo Admin</span>
+                      <i class="feather icon-chevron-down"></i>
+                    </div>
+                    <ul
+                      class="show-notification profile-notification dropdown-menu"
+                      data-dropdown-in="fadeIn"
+                      data-dropdown-out="fadeOut"
+                    >
+                      <li>
+                        <a href=" ">
+                          <i class="feather icon-edit"></i> Change Password
+                        </a>
+                      </li>
+
+                      <li>
+                        <a href=""
+                          ><i class="feather icon-log-out"></i>Logout</a
+                        >
+                      </li>
+                    </ul>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+        <!-- [ Header ] end -->
+
+        <div class="pcoded-main-container">
+          <div class="pcoded-wrapper">
+            <!-- [ navigation menu ] start -->
+            <nav class="pcoded-navbar" id="render-navbar">
+              <div class="nav-list">
+                <div class="pcoded-inner-navbar main-menu">
+                  <div class="pcoded-navigation-label">Navigation</div>
+                  <ul class="pcoded-item pcoded-left-item">
+                    <li class="">
+                      <a href="dashboard.html" class="waves-effect waves-dark">
+                        <span class="pcoded-micon"
+                          ><i class="feather icon-home"></i
+                        ></span>
+                        <span class="pcoded-mtext">Dashboard</span>
+                      </a>
+                    </li>
+                  </ul>
+
+                  <ul class="pcoded-item pcoded-left-item">
+                    <li class="   ">
+                      <a
+                        href="customer-list.html"
+                        class="waves-effect waves-dark render_link demo"
+                      >
+                        <span class="pcoded-micon"
+                          ><i class="feather icon-home"></i
+                        ></span>
+                        <span class="pcoded-mtext">Customers</span>
+                      </a>
+                    </li>
+                  </ul>
+
+                  <ul class="pcoded-item pcoded-left-item">
+                    <li class="pcoded-hasmenu">
+                      <a
+                        href="javascript:void(0)"
+                        class="waves-effect waves-dark render_link"
+                      >
+                        <span class="pcoded-micon"
+                          ><i class="feather icon-home"></i
+                        ></span>
+                        <span class="pcoded-mtext">Drivers</span>
+                      </a>
+
+                      <ul class="pcoded-submenu">
+                        <li class=" ">
+                          <a
+                            href="add-driver.html"
+                            class="waves-effect waves-dark"
+                          >
+                            <span class="pcoded-mtext">Add Driver </span>
+                          </a>
+                        </li>
+                        <li class=" ">
+                          <a
+                            href="approved.html"
+                            class="waves-effect waves-dark"
+                          >
+                            <span class="pcoded-mtext">Approved Drivers </span>
+                          </a>
+                        </li>
+                        <li class=" ">
+                          <a
+                            href="un-approved.html"
+                            class="waves-effect waves-dark"
+                          >
+                            <span class="pcoded-mtext"
+                              >Un-Approved Drivers
+                            </span>
+                          </a>
+                        </li>
+                        <li class=" ">
+                          <a
+                            href="blocked-driver.html"
+                            class="waves-effect waves-dark"
+                          >
+                            <span class="pcoded-mtext">Blocked Drivers </span>
+                          </a>
+                        </li>
+                        <li class=" ">
+                          <a
+                            href="reject-driver.html"
+                            class="waves-effect waves-dark"
+                          >
+                            <span class="pcoded-mtext">Reject Drivers </span>
+                          </a>
+                        </li>
+                      </ul>
+                    </li>
+                  </ul>
+
+                  <ul class="pcoded-item pcoded-left-item">
+                    <li class="   ">
+                      <a
+                        href="manual-ride-bookng.html"
+                        class="waves-effect waves-dark render_link demo"
+                      >
+                        <span class="pcoded-micon"
+                          ><i class="feather icon-home"></i
+                        ></span>
+                        <span class="pcoded-mtext">Manual Ride Booking</span>
+                      </a>
+                    </li>
+                  </ul>
+
+                  <ul class="pcoded-item pcoded-left-item">
+                    <li class="pcoded-hasmenu">
+                      <a
+                        href="javascript:void(0)"
+                        class="waves-effect waves-dark render_link"
+                      >
+                        <span class="pcoded-micon"
+                          ><i class="feather icon-home"></i
+                        ></span>
+                        <span class="pcoded-mtext">Ride list</span>
+                      </a>
+
+                      <ul class="pcoded-submenu">
+                        <li class=" ">
+                          <a
+                            href="all-rides.html"
+                            class="waves-effect waves-dark"
+                          >
+                            <span class="pcoded-mtext">All Rides </span>
+                          </a>
+                        </li>
+                        <li class=" ">
+                          <a
+                            href="shuduled-rides.html"
+                            class="waves-effect waves-dark"
+                          >
+                            <span class="pcoded-mtext">Scheduled Rides </span>
+                          </a>
+                        </li>
+                        <li class=" ">
+                          <a
+                            href="cancelled-rides.html"
+                            class="waves-effect waves-dark"
+                          >
+                            <span class="pcoded-mtext">Cancelled Rides </span>
+                          </a>
+                        </li>
+                      </ul>
+                    </li>
+                  </ul>
+
+                  <ul class="pcoded-item pcoded-left-item">
+                    <li class="   ">
+                      <a
+                        href="Un-Register-Providers-List.html"
+                        class="waves-effect waves-dark render_link demo"
+                      >
+                        <span class="pcoded-micon"
+                          ><i class="feather icon-home"></i
+                        ></span>
+                        <span class="pcoded-mtext"
+                          >Incomplete Provider Registration</span
+                        >
+                      </a>
+                    </li>
+                  </ul>
+
+                  <ul class="pcoded-item pcoded-left-item">
+                    <li class="   ">
+                      <a
+                        href="vehicle-type.html"
+                        class="waves-effect waves-dark render_link demo"
+                      >
+                        <span class="pcoded-micon"
+                          ><i class="feather icon-home"></i
+                        ></span>
+                        <span class="pcoded-mtext">Vehicle Type</span>
+                      </a>
+                    </li>
+                  </ul>
+
+                  <ul class="pcoded-item pcoded-left-item">
+                    <li class="   ">
+                      <a
+                        href="required-documents-list.html"
+                        class="waves-effect waves-dark render_link demo"
+                      >
+                        <span class="pcoded-micon"
+                          ><i class="feather icon-home"></i
+                        ></span>
+                        <span class="pcoded-mtext">Required Documents</span>
+                      </a>
+                    </li>
+                  </ul>
+
+                  <ul class="pcoded-item pcoded-left-item">
+                    <li class="   ">
+                      <a
+                        href="restricted-area-list.html"
+                        class="waves-effect waves-dark render_link demo"
+                      >
+                        <span class="pcoded-micon"
+                          ><i class="feather icon-home"></i
+                        ></span>
+                        <span class="pcoded-mtext">Gro Fencing</span>
+                      </a>
+                    </li>
+                  </ul>
+
+                  <ul class="pcoded-item pcoded-left-item">
+                    <li class="   ">
+                      <a
+                        href="earing-report.html"
+                        class="waves-effect waves-dark render_link demo"
+                      >
+                        <span class="pcoded-micon"
+                          ><i class="feather icon-home"></i
+                        ></span>
+                        <span class="pcoded-mtext">Earnings Reports</span>
+                      </a>
+                    </li>
+                  </ul>
+
+                  <ul class="pcoded-item pcoded-left-item">
+                    <li class="   ">
+                      <a
+                        href="review-list.html"
+                        class="waves-effect waves-dark render_link demo"
+                      >
+                        <span class="pcoded-micon"
+                          ><i class="feather icon-home"></i
+                        ></span>
+                        <span class="pcoded-mtext">Reviews</span>
+                      </a>
+                    </li>
+                  </ul>
+
+                  <ul class="pcoded-item pcoded-left-item">
+                    <li class="   ">
+                      <a
+                        href="world-currency-list.html"
+                        class="waves-effect waves-dark render_link demo"
+                      >
+                        <span class="pcoded-micon"
+                          ><i class="feather icon-home"></i
+                        ></span>
+                        <span class="pcoded-mtext">World Currency</span>
+                      </a>
+                    </li>
+                  </ul>
+
+                  <ul class="pcoded-item pcoded-left-item">
+                    <li class="   ">
+                      <a
+                        href="site-settings.html"
+                        class="waves-effect waves-dark render_link demo"
+                      >
+                        <span class="pcoded-micon"
+                          ><i class="feather icon-home"></i
+                        ></span>
+                        <span class="pcoded-mtext">Site Settings</span>
+                      </a>
+                    </li>
+                  </ul>
+
+                  <ul class="pcoded-item pcoded-left-item">
+                    <li class="pcoded-hasmenu">
+                      <a
+                        href="javascript:void(0)"
+                        class="waves-effect waves-dark render_link"
+                      >
+                        <span class="pcoded-micon"
+                          ><i class="feather icon-home"></i
+                        ></span>
+                        <span class="pcoded-mtext">App Service Setting</span>
+                      </a>
+
+                      <ul class="pcoded-submenu">
+                        <li class=" ">
+                          <a
+                            href="service-setting.html"
+                            class="waves-effect waves-dark"
+                          >
+                            <span class="pcoded-mtext">Service Setting </span>
+                          </a>
+                        </li>
+                        <li class=" ">
+                          <a
+                            href="app-version-setting.html"
+                            class="waves-effect waves-dark"
+                          >
+                            <span class="pcoded-mtext"
+                              >App Version Setting
+                            </span>
+                          </a>
+                        </li>
+                      </ul>
+                    </li>
+                  </ul>
+
+                  <ul class="pcoded-item pcoded-left-item">
+                    <li class="pcoded-hasmenu">
+                      <a
+                        href="javascript:void(0)"
+                        class="waves-effect waves-dark render_link"
+                      >
+                        <span class="pcoded-micon"
+                          ><i class="feather icon-home"></i
+                        ></span>
+                        <span class="pcoded-mtext">More Features</span>
+                      </a>
+
+                      <ul class="pcoded-submenu">
+                        <li class=" ">
+                          <a
+                            href="provide-location-on-map.html"
+                            class="waves-effect waves-dark"
+                          >
+                            <span class="pcoded-mtext">God`s View </span>
+                          </a>
+                        </li>
+                        <li class=" ">
+                          <a
+                            href="promocode-list.html"
+                            class="waves-effect waves-dark"
+                          >
+                            <span class="pcoded-mtext">Promocode List </span>
+                          </a>
+                        </li>
+                        <li class=" ">
+                          <a
+                            href="email-templates.html"
+                            class="waves-effect waves-dark"
+                          >
+                            <span class="pcoded-mtext">Email Templates </span>
+                          </a>
+                        </li>
+                        <li class=" ">
+                          <a
+                            href="push-notification.html"
+                            class="waves-effect waves-dark"
+                          >
+                            <span class="pcoded-mtext">Push Notification </span>
+                          </a>
+                        </li>
+                        <li class=" ">
+                          <a
+                            href="support-page-list.html"
+                            class="waves-effect waves-dark"
+                          >
+                            <span class="pcoded-mtext">Page List </span>
+                          </a>
+                        </li>
+                      </ul>
+                    </li>
+                  </ul>
+                  <ul class="pcoded-item pcoded-left-item">
+                    <li class="">
+                      <a
+                        href="sub-admin-list.html"
+                        class="waves-effect waves-dark"
+                      >
+                        <span class="pcoded-micon"
+                          ><i class="feather icon-home"></i
+                        ></span>
+                        <span class="pcoded-mtext">Sub Admin</span>
+                      </a>
+                    </li>
+                  </ul>
+
+                  <ul class="pcoded-item pcoded-left-item">
+                    <li class="pcoded-hasmenu">
+                      <a
+                        href="javascript:void(0)"
+                        class="waves-effect waves-dark"
+                      >
+                        <span class="pcoded-micon"
+                          ><i class="feather icon-home"></i
+                        ></span>
+                        <span class="pcoded-mtext"
+                          >Live Chat
+                          <i
+                            class="fa fa-circle"
+                            style="
+                              color: red;
+                              position: absolute;
+                              top: -2px;
+                              right: -13px;
+                              font-size: 11px;
+                            "
+                            id="admin_seen_or_not"
+                          ></i
+                        ></span>
+                      </a>
+                      <ul class="pcoded-submenu">
+                        <li class="">
+                          <a
+                            href="chat-user-list.html"
+                            class="waves-effect waves-dark"
+                          >
+                            <span class="pcoded-mtext"
+                              >Customer Live Chat &nbsp;<i
+                                class="fa fa-circle"
+                                style="
+                                  color: red;
+                                  position: absolute;
+                                  top: 3px;
+                                  right: 29.5%;
+                                  font-size: 11px;
+                                "
+                                id="admin_seen_or_not_customer"
+                              ></i
+                            ></span>
+                          </a>
+                        </li>
+
+                        <li class="">
+                          <a
+                            href="chat-driver-list.html"
+                            class="waves-effect waves-dark"
+                          >
+                            <span class="pcoded-mtext"
+                              >Driver Live Chat &nbsp;<i
+                                class="fa fa-circle"
+                                style="
+                                  color: red;
+                                  position: absolute;
+                                  top: 3px;
+                                  right: 39.5%;
+                                  font-size: 11px;
+                                "
+                                id="admin_seen_or_not_driver"
+                              ></i
+                            ></span>
+                          </a>
+                        </li>
+                      </ul>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </nav>
+            <!-- [ navigation menu ] end -->
+
+            <script>
+              const database = firebase.database();
+
+              // firebase.auth().createUserWithEmailAndPassword("admin@foxtaxi.com", "123456")
+              //     .then((userCredential) => {
+              //         // Signed in
+              //         var user = userCredential.user;
+              //         // ...
+              //     })
+              //     .catch((error) => {
+              //         var errorCode = error.code;
+              //         var errorMessage = error.message;
+              //         // ..
+              //     });
+
+              firebase
+                .auth()
+                .signInWithEmailAndPassword("admin@foxtaxi.com", "123456")
+                .then((userCredential) => {
+                  // Signed in
+                  var user = userCredential.user;
+                  console.log("sign in");
+                  // ...
+                })
+                .catch((error) => {
+                  var errorCode = error.code;
+                  var errorMessage = error.message;
+                  console.log("sign in error");
+                  console.log(errorCode);
+                  console.log(errorMessage);
+                });
+
+              firebase.auth().onAuthStateChanged((user) => {
+                if (user) {
+                  // User is signed in, see docs for a list of available properties
+                  // https://firebase.google.com/docs/reference/js/firebase.User
+                  var uid = user.uid;
+                  // ...
+                } else {
+                  // User is signed out
+                  // ...
+                }
+              });
+
+              var connectedRef = firebase.database().ref(".info/connected");
+              connectedRef.on("value", (snap) => {
+                if (snap.val()) {
+                  database
+                    .ref("/fox-taxiapp-startuptrinity-com/admin_status")
+                    .set({
+                      admin_connected: true,
+                    });
+                  console.log(" connected");
+                } else {
+                  database
+                    .ref("/fox-taxiapp-startuptrinity-com/admin_status")
+                    .set({
+                      admin_connected: false,
+                    });
+                  console.log("not connected");
+                }
+              });
+
+              var db_ref =
+                "/fox-taxiapp-startuptrinity-com/admin_status/admin_connected";
+              var onDisconnectref = firebase.database().ref(db_ref);
+              onDisconnectref.onDisconnect().set(false);
+
+              firebase
+                .database()
+                .ref("/fox-taxiapp-startuptrinity-com/fcm_token/a_1/")
+                .onDisconnect()
+                .set({
+                  fcm_token: "",
+                });
+
+              // check if admin is online or offline
+              var starCountRef = firebase
+                .database()
+                .ref("/fox-taxiapp-startuptrinity-com/users/a_1")
+                .orderByChild("admin_seen")
+                .equalTo(false);
+              starCountRef.on("value", (snapshot) => {
+                try {
+                  $("#admin_seen_or_not").hide();
+                  $("#admin_seen_or_not_customer").hide();
+                  $("#admin_seen_or_not_store").hide();
+                  $("#admin_seen_or_not_driver").hide();
+                  $("#admin_seen_or_not_provider").hide();
+
+                  $(".admin_unread").css("background-color", "transparent");
+
+                  var c_count = 0;
+                  var s_count = 0;
+                  var d_count = 0;
+                  var p_count = 0;
+                  snapshot.forEach((childSnapshot) => {
+                    var childData = childSnapshot.val();
+                    if (childData["user_type"] === 0) {
+                      if (!childData["admin_seen"]) {
+                        c_count = c_count + 1;
+                        $("#admin_seen_or_not_customer").show();
+                        $(
+                          ".admin_seen_bgcolor_" + childData["receiver_id"]
+                        ).css("background-color", "aliceblue");
+                      }
+                      // else {
+                      //     throw "Break"
+                      // }
+                    } else if (childData["user_type"] === 1) {
+                      if (!childData["admin_seen"]) {
+                        s_count = s_count + 1;
+                        $("#admin_seen_or_not_store").show();
+                        $(
+                          ".admin_seen_bgcolor_" + childData["receiver_id"]
+                        ).css("background-color", "aliceblue");
+                      }
+                      // else {
+                      //     throw "Break"
+                      // }
+                    } else if (childData["user_type"] === 2) {
+                      if (!childData["admin_seen"]) {
+                        d_count = d_count + 1;
+                        $("#admin_seen_or_not_driver").show();
+                        $(
+                          ".admin_seen_bgcolor_" + childData["receiver_id"]
+                        ).css("background-color", "aliceblue");
+                      }
+                      // else {
+                      //     throw "Break"
+                      // }
+                    } else if (childData["user_type"] === 3) {
+                      if (!childData["admin_seen"]) {
+                        p_count = p_count + 1;
+                        $("#admin_seen_or_not_provider").show();
+                        $(
+                          ".admin_seen_bgcolor_" + childData["receiver_id"]
+                        ).css("background-color", "aliceblue");
+                      }
+                      // else {
+                      //     throw "Break"
+                      // }
+                    } else {
+                      throw "Break";
+                    }
+                  });
+                  if (
+                    c_count > 0 ||
+                    s_count > 0 ||
+                    d_count > 0 ||
+                    p_count > 0
+                  ) {
+                    $("#admin_seen_or_not").show();
+                  }
+                } catch (e) {
+                  // console.log("Ended");
+                }
+              });
+
+              const messaging = firebase.messaging();
+
+              if ("serviceWorker" in navigator) {
+                window.addEventListener("load", function () {
+                  var url =
+                    "https://fox-taxiapp.startuptrinity.com/firebase-messaging-sw.js";
+                  navigator.serviceWorker
+                    .register(url)
+                    .then(function (registration) {
+                      // messaging.useServiceWorker(registration);
+
+                      // Request for permission
+                      messaging
+                        .requestPermission()
+                        .then(function () {
+                          console.log("Notification permission granted.");
+                          // TODO(developer): Retrieve an Instance ID token for use with FCM.
+                          messaging
+                            .getToken({
+                              vapidKey:
+                                "BHhgyGvptoMvNT0IY1SqYoggiO9kczdl6VV5Drz2CDZ3tVCIGVMDHAVPcE0oWTTz13Lw6iF1SpqxZ1AfP3vzRAk",
+                            })
+                            .then(function (currentToken) {
+                              if (currentToken) {
+                                //console.log('Token: ' + currentToken);
+                                sendTokenToServer(currentToken);
+                                storeToken(currentToken);
+                              } else {
+                                console.log(
+                                  "No Instance ID token available. Request permission to generate one."
+                                );
+                                setTokenSentToServer(false);
+                              }
+                            })
+                            .catch(function (err) {
+                              console.log(
+                                "An error occurred while retrieving token. ",
+                                err
+                              );
+                              setTokenSentToServer(false);
+                            });
+                        })
+                        .catch(function (err) {
+                          console.log(
+                            "Unable to get permission to notify.",
+                            err
+                          );
+                        });
+                    });
+                });
+              }
+              // Handle incoming messages
+
+              messaging.onMessage(function (payload) {
+                console.log("Notification received: ", payload);
+                // console.log("Notification received: ", payload);
+                // if (payload.data.is_chat_notification != true){
+                var notify;
+                notify = new Notification(payload.data.title, {
+                  body: payload.data.desc,
+                  // 'tag': "s"
+                });
+
+                notify.onclick = function () {
+                  var url =
+                    "https://fox-taxiapp.startuptrinity.com/admin/chat/:string/:type/:id";
+
+                  url = url
+                    .replace(":type", payload.data.user_type)
+                    .replace(":id", payload.data.user_id);
+
+                  if (
+                    payload.data.user_type === 1 ||
+                    payload.data.user_type === "1"
+                  ) {
+                    url = url.replace(":string", "store");
+                  } else if (
+                    payload.data.user_type === 2 ||
+                    payload.data.user_type === "2"
+                  ) {
+                    url = url.replace(":string", "driver");
+                  } else if (
+                    payload.data.user_type === 3 ||
+                    payload.data.user_type === "3"
+                  ) {
+                    url = url.replace(":string", "provider");
+                  } else {
+                    url = url.replace(":string", "user");
+                  }
+
+                  window.location = url;
+                  // alert(this.url);
+                };
+
+                //$('#chatAudio').play();
+                // }
+                // toastr["info"](payload.data.desc, payload.data.desc);
+              });
+
+              // Callback fired if Instance ID token is updated.
+              messaging.onTokenRefresh(function () {
+                messaging
+                  .getToken()
+                  .then(function (refreshedToken) {
+                    console.log("Token refreshed.");
+                    // Indicate that the new Instance ID token has not yet been sent
+                    // to the app server.
+                    setTokenSentToServer(false);
+                    // Send Instance ID token to app server.
+                    sendTokenToServer(refreshedToken);
+                    storeToken(refreshedToken);
+                  })
+                  .catch(function (err) {
+                    console.log("Unable to retrieve refreshed token ", err);
+                  });
+              });
+
+              // Send the Instance ID token your application server, so that it can:
+              // - send messages back to this app
+              // - subscribe/unsubscribe the token from topics
+              function sendTokenToServer(currentToken) {
+                if (!isTokenSentToServer()) {
+                  console.log("Sending token to server...");
+                  // TODO(developer): Send the current token to your server.
+                  setTokenSentToServer(true);
+                } else {
+                  console.log(
+                    "Token already sent to server so won't send it again " +
+                      "unless it changes"
+                  );
+                }
+              }
+
+              function isTokenSentToServer() {
+                return window.localStorage.getItem("sentToServer") == 1;
+              }
+
+              function setTokenSentToServer(sent) {
+                window.localStorage.setItem("sentToServer", sent ? 1 : 0);
+              }
+
+              function storeToken(currentToken) {
+                $.ajax({
+                  type: "get",
+                  url: "https://fox-taxiapp.startuptrinity.com/admin/admin-web-token",
+                  data: {
+                    web_token: currentToken,
+                  },
+                  success: function (result) {
+                    if (result.success == true) {
+                      var admin_fcm =
+                        "/fox-taxiapp-startuptrinity-com/fcm_token/a_1/";
+                      database.ref(admin_fcm).set({
+                        fcm_token: currentToken,
+                      });
+                    } else {
+                      // console.log(result.message)
+                    }
+                  },
+                });
+              }
+            </script>
+
+            <div id="render-content">
+              <div class="pcoded-content">
+                <!-- [ breadcrumb ] start -->
+                <div class="page-header card">
+                  <div class="row align-items-end">
+                    <div class="col-lg-12">
+                      <div class="row">
+                        <div class="col-lg-8">
+                          <div class="page-header-title">
+                            <i class="feather icon-list bg-c-blue"></i>
+                            <div class="d-inline">
+                              <h5>Restricted Area List</h5>
+                              <span>All Restricted Area</span>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- [ breadcrumb ] end -->
+
+                <div class="pcoded-inner-content">
+                  <div class="main-body">
+                    <div class="page-wrapper">
+                      <!-- Page body start -->
+                      <div class="page-body">
+                        <div class="card">
+                          <div class="card-header">
+                            <h5>Restricted Area</h5>
+
+                            <a
+                              href="https://fox-taxiapp.startuptrinity.com/admin/add-restricted-area"
+                              class="btn btn-primary m-b-0 btn-right render_link"
+                            >
+                              Add Restricted Area</a
+                            >
+                          </div>
+                          <div class="card-block">
+                            <div class="dt-responsive table-responsive">
+                              <table
+                                id="new-cons"
+                                class="table table-striped table-bordered nowrap"
+                                style="width: 100%"
+                              >
+                                <thead>
+                                  <tr>
+                                    <th>No</th>
+                                    <th>Area</th>
+                                    <th>Status</th>
+                                    <th>Actions</th>
+                                  </tr>
+                                </thead>
+                                <tbody>
+                                  <tr id="delete_customer_1">
+                                    <td>1</td>
+                                    <td>surat</td>
+                                    <td>
+                                      <span class="toggle">
+                                        <label>
+                                          <input
+                                            name="status"
+                                            class="form-control user"
+                                            id="user_id_1"
+                                            user_id="1"
+                                            user_status="1"
+                                            type="checkbox"
+                                            checked
+                                          />
+                                          <span
+                                            class="button-indecator"
+                                            data-toggle="tooltip"
+                                            data-placement="top"
+                                            id="title_status_1"
+                                            title="Active"
+                                          ></span>
+                                        </label>
+                                      </span>
+                                    </td>
+                                    <td class="action">
+                                      <a
+                                        class="render_link"
+                                        href="https://fox-taxiapp.startuptrinity.com/admin/edit-restricted-area/1"
+                                      >
+                                        <img
+                                          src="https://fox-taxiapp.startuptrinity.com/assets/images/template-images/writing-1.png"
+                                          style="width: 20px; height: 20px"
+                                          data-toggle="tooltip"
+                                          data-placement="top"
+                                          title="Edit"
+                                        />
+                                      </a>
+                                      <a class="delete" userid="1">
+                                        <img
+                                          src="https://fox-taxiapp.startuptrinity.com/assets/images/template-images/remove-1.png"
+                                          style="width: 20px; height: 20px"
+                                          data-toggle="tooltip"
+                                          data-placement="top"
+                                          title="Delete"
+                                        />
+                                      </a>
+                                    </td>
+                                  </tr>
+                                  <tr id="delete_customer_2">
+                                    <td>2</td>
+                                    <td>Rajkot</td>
+                                    <td>
+                                      <span class="toggle">
+                                        <label>
+                                          <input
+                                            name="status"
+                                            class="form-control user"
+                                            id="user_id_2"
+                                            user_id="2"
+                                            user_status="0"
+                                            type="checkbox"
+                                          />
+                                          <span
+                                            class="button-indecator"
+                                            data-toggle="tooltip"
+                                            data-placement="top"
+                                            id="title_status_2"
+                                            title="InActive"
+                                          ></span>
+                                        </label>
+                                      </span>
+                                    </td>
+                                    <td class="action">
+                                      <a
+                                        class="render_link"
+                                        href="https://fox-taxiapp.startuptrinity.com/admin/edit-restricted-area/2"
+                                      >
+                                        <img
+                                          src="https://fox-taxiapp.startuptrinity.com/assets/images/template-images/writing-1.png"
+                                          style="width: 20px; height: 20px"
+                                          data-toggle="tooltip"
+                                          data-placement="top"
+                                          title="Edit"
+                                        />
+                                      </a>
+                                      <a class="delete" userid="2">
+                                        <img
+                                          src="https://fox-taxiapp.startuptrinity.com/assets/images/template-images/remove-1.png"
+                                          style="width: 20px; height: 20px"
+                                          data-toggle="tooltip"
+                                          data-placement="top"
+                                          title="Delete"
+                                        />
+                                      </a>
+                                    </td>
+                                  </tr>
+                                </tbody>
+                              </table>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <!-- Page body end -->
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="render-js"></div>
+
+    <!--======== SCRIPT FILES =========-->
+    <script type="text/javascript">
+      function googleTranslateElementInit() {
+        new google.translate.TranslateElement(
+          { pageLanguage: "en" },
+          "google_translate_element"
+        );
+      }
+    </script>
+    <script
+      type="text/javascript"
+      src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"
+    ></script>
+    <script
+      type="text/javascript"
+      src="https://fox-taxiapp.startuptrinity.com/assets/js/jquery.min.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="https://fox-taxiapp.startuptrinity.com/assets/js/jquery-ui.min.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="https://fox-taxiapp.startuptrinity.com/assets/js/popper.min.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="https://fox-taxiapp.startuptrinity.com/assets/js/bootstrap.min.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="https://fox-taxiapp.startuptrinity.com/assets/js/waves.min.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="https://fox-taxiapp.startuptrinity.com/assets/js/jquery.slimscroll.js"
+    ></script>
+    <script src="https://fox-taxiapp.startuptrinity.com/assets/js/responsive/jquery.dataTables.min.js"></script>
+    <script src="https://fox-taxiapp.startuptrinity.com/assets/js/responsive/dataTables.bootstrap4.min.js"></script>
+    <script src="https://fox-taxiapp.startuptrinity.com/assets/js/responsive/dataTables.responsive.min.js"></script>
+    <script src="https://fox-taxiapp.startuptrinity.com/assets/js/responsive/responsive-custom.js"></script>
+
+    <script type="text/javascript">
+      var table = $("#new-cons").DataTable();
+      $(document).on("click", ".delete", function (e) {
+        e.preventDefault();
+        var id = $(this).attr("userid");
+        var RemovetableRow = table.row($(this).parents("tr"));
+        swal(
+          {
+            title: "Are you sure?",
+            text: "You will not be able to recover this data!",
+            type: "warning",
+            showCancelButton: true,
+            confirmButtonClass: "btn-danger",
+            confirmButtonText: "Yes, delete it!",
+            cancelButtonText: "No, cancel!",
+            closeOnConfirm: false,
+            closeOnCancel: false,
+          },
+          function (isConfirm) {
+            if (isConfirm) {
+              $.ajax({
+                type: "get",
+                url: "https://fox-taxiapp.startuptrinity.com/admin/delete-restricted-area",
+                data: { id: id },
+                success: function (result) {
+                  if (result.success == true) {
+                    // RemovetableRow.remove().draw();
+                    // swal("Success", result.message, "success");
+                    // location.reload();
+                    var new_id = "#delete_customer_" + id;
+                    swal("Success", "customer remove successfully", "success");
+                    $(new_id).hide();
+                  } else {
+                    swal("Warning", result.message, "warning");
+                    console.log(result);
+                  }
+                },
+              });
+            } else {
+              swal("Cancelled", "Your Data is safe :)", "error");
+            }
+          }
+        );
+      });
+      $(document).on("click", ".user", function (e) {
+        e.preventDefault();
+        var id = $(this).attr("user_id");
+        var status = $(this).attr("user_status");
+        var txt, title;
+        if (status == 1) {
+          title = "Disable area?";
+          txt = "if press yes then disable area!";
+        } else {
+          title = "Enable area?";
+          txt = "if press yes then enable area!";
+        }
+        swal(
+          {
+            title: title,
+            text: txt,
+            type: "warning",
+            showCancelButton: true,
+            confirmButtonClass: "btn-danger",
+            confirmButtonText: "Yes",
+            cancelButtonText: "No",
+            closeOnConfirm: false,
+            closeOnCancel: false,
+          },
+          function (isConfirm) {
+            if (isConfirm) {
+              $.ajax({
+                type: "get",
+                url: "https://fox-taxiapp.startuptrinity.com/admin/update-restricted-area-status",
+                data: { id: id },
+                success: function (result) {
+                  if (result.success == true) {
+                    var user_id_ = "#user_id_" + id;
+                    var title_status = "#title_status_" + id;
+                    if (result.status == 1) {
+                      $(user_id_).prop("checked", true);
+                      $(user_id_).attr("user_status", 1);
+                      swal("Success", "Enable Area successfully", "success");
+                    } else {
+                      $(user_id_).prop("checked", false);
+                      $(user_id_).attr("user_status", 0);
+                      swal("Success", "Disable Area successfully", "success");
+                    }
+                  } else {
+                    swal("Warning", result.message, "warning");
+                    console.log(result);
+                  }
+                },
+              });
+            } else {
+              if (status == 1) {
+                swal("Cancelled", "Area is Enable", "error");
+              } else {
+                swal("Cancelled", "Area is Disable", "error");
+              }
+            }
+          }
+        );
+      });
+    </script>
+    <script
+      type="text/javascript"
+      src="https://fox-taxiapp.startuptrinity.com/assets/js/pcoded.min.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="https://fox-taxiapp.startuptrinity.com/assets/js/script.min.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="https://fox-taxiapp.startuptrinity.com/assets/js/vertical-layout.min.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="https://fox-taxiapp.startuptrinity.com/assets/js/sweetalert.min.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="https://fox-taxiapp.startuptrinity.com/assets/js/jquery.bootstrap-growl.min.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="https://fox-taxiapp.startuptrinity.com/assets/js/custom.js"
+    ></script>
+    <script>
+      $("[data-toggle='tooltip']").click(function () {
+        var $this = $(this);
+        $(".tooltip").fadeOut("fast", function () {
+          $this.blur();
+        });
+      });
+      $(document).ready(function ($) {
+        $("#admin_seen_or_not").hide();
+        $("#admin_seen_or_not_customer").hide();
+        $("#admin_seen_or_not_store").hide();
+        $("#admin_seen_or_not_driver").hide();
+        $("#admin_seen_or_not_provider").hide();
+
+        //Use this inside your document ready jQuery
+        $(window).on("popstate", function () {
+          location.reload(true);
+        });
+      });
+    </script>
+  </body>
+</html>
